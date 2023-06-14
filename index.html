@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* cursor */
+        * {
+            cursor: url(img/cursor.png), auto;
+        }
+
+
+        /* body */
+        body {
+            overflow: hidden;
+        }
+
+
+        /* background */
+        #bg {
+            height: auto;
+            width: 100%;
+            background-image: url('img/bg.png');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            z-index: 1;
+        }
+
+
+        /* LOGO */
+        #logodiv {
+            height: 100px;
+            width: 400px;
+            position: absolute;
+            left: 96%;
+            top: 4%;
+            z-index: 3;
+            transform: translate(calc(-50% - 73px), calc(-50% + 18px)) scale(0.63, 0.63);
+            text-align: center;
+        }
+
+        #logo {
+            height: 80px;
+            width: 350px;
+            transition: transform .2s;
+        }
+
+        #logo:hover {
+            transform: scale(1.1);
+        }
+
+
+        /* contact */
+        #contactbtndiv {
+            height: 250px;
+            width: 70px;
+            position: fixed;
+            right: 0px;
+            bottom: 0px;
+            z-index: 2;
+        }
+
+        #facebook {
+            height: 50px;
+            width: 50px;
+            position: absolute;
+            top: 0px;
+            z-index: 1;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        #facebook:hover {
+            transform: translateY(-5px);
+        }
+
+        #instagram {
+            height: 50px;
+            width: 50px;
+            position: absolute;
+            top: 60px;
+            z-index: 1;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        #instagram:hover {
+            transform: translateY(-5px);
+        }
+
+        #mail {
+            height: 50px;
+            width: 50px;
+            position: absolute;
+            top: 120px;
+            z-index: 1;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        #mail:hover {
+            transform: translateY(-5px);
+        }
+
+        #closebtn {
+            height: 50px;
+            width: 50px;
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            z-index: 3;
+            opacity: 0;
+        }
+
+        #close {
+            height: 53px;
+            width: 53px;
+            position: fixed;
+            bottom: 18px;
+            right: 18px;
+            z-index: 2;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        #contactbtn:checked~#facebook {
+            transform: translateY(180px) rotate(-360deg);
+        }
+
+        #contactbtn:checked~#instagram {
+            transform: translateY(120px) rotate(-360deg);
+        }
+
+        #contactbtn:checked~#mail {
+            transform: translateY(60px) rotate(-360deg);
+        }
+
+
+        /* nav */
+        .line {
+            width: 24px;
+            height: 24px;
+            background: #FFF;
+            cursor: pointer;
+            display: block;
+            padding: 16px;
+            position: fixed;
+            z-index: 2;
+        }
+
+        .line .menu,
+        .line .menu::before,
+        .line .menu::after {
+            background: #222;
+            content: '';
+            display: block;
+            height: 1px;
+            position: absolute;
+            transition: background ease .3s, top ease .3s .3s, transform ease .3s;
+            width: 20px;
+        }
+
+        .line .menu {
+            left: 18px;
+            top: 27px;
+        }
+
+        .line .menu::before {
+            top: -6px;
+        }
+
+        .line .menu::after {
+            top: 6px;
+        }
+
+
+        #menu:checked+.line .menu {
+            background: transparent;
+        }
+
+        #menu:checked+.line .menu::before {
+            transform: rotate(45deg);
+        }
+
+        #menu:checked+.line .menu::after {
+            transform: rotate(-45deg);
+        }
+
+        #menu:checked+.line .menu::before,
+        #menu:checked+.line .menu::after {
+            top: 0;
+            transition: top ease .3s, transform ease .3s .3s;
+        }
+
+
+        #menu:checked~.menu-list {
+            width: 250px;
+        }
+
+        .menu-list {
+            width: 60px;
+            height: 100vh;
+            background: #FFF;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, .1);
+            padding-top: 60px;
+            position: fixed;
+            z-index: 1;
+            transition: all .6s;
+            overflow: hidden;
+        }
+
+
+        .menu-list ul {
+            list-style: none;
+            margin-left: 70px;
+            padding: 0;
+        }
+
+        .menu-list ul>li {
+            display: block;
+            width: 160px;
+            border: none;
+            background: none;
+            padding: 0;
+            margin: 0;
+            color: #222;
+            text-decoration: none;
+        }
+
+
+        input#menu {
+            display: none;
+        }
+
+
+        /* button */
+        .button {
+            background-color: white;
+            border: 2px solid #395422;
+            color: #395422;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            border-radius: 8px;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .button:hover {
+            background-color: #395422;
+            border: 2px solid white;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            border-radius: 8px;
+            transform: scale(1.1);
+        }
+
+
+        /* base */
+        #base {
+            height: 100vh;
+            width: 252px;
+            background-color: #ffffff;
+            z-index: 1;
+        }
+
+
+        /* deco */
+        #deco {
+            height: 100vh;
+            width: 136px;
+            position: relative;
+            left: 60px;
+        }
+    </style>
+    <title>茶道 / 主頁</title>
+    <link rel="icon" href="img/icon.png" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+</head>
+
+<body style="background-color: #395422">
+
+    <nav class="nav-box" style="position: relative; z-index: 3;">
+        <input type="checkbox" id="menu">
+        <label for="menu" class="line">
+            <div class="menu" aria-checked="false"></div>
+        </label>
+
+        <div class="menu-list">
+            <ul>
+                <li>
+                    <h3 style="color:#395422;"><b>主選單</b></h3>
+                </li>
+                <li><button class="button" onclick="refreshPage()" role="button">首頁&emsp;&emsp;</button>
+                </li>
+                <div style="height: 5px;"></div>
+                <li><a class="button" href="about.html" role="button">關於我們</a></li>
+                <div style="height: 5px;"></div>
+                <li>
+                    <div class="dropdown">
+                        <a class="button dropdown-toggle" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            茶道&emsp;
+                        </a>
+
+                        <ul class="dropdown-menu dropdown-menu-start" aria-labelledby="dropdownMenuLink">
+                            <li><a class="dropdown-item" style="color:#395422;" href="intro.html">茶道介紹</a></li>
+                            <li><a class="dropdown-item" style="color:#395422;" href="tutorial.html">茶道教學</a></li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="d-flex flex-row">
+        <div id="base">
+            <img id="deco" src="img/deco.png" class="z-2" alt="">
+        </div>
+        <div id="bg"></div>
+    </div>
+
+    <div>
+        <div id="logodiv">
+            <a href="logo.html">
+                <img id="logo" src="img/logo.gif" alt="Animated GIF">
+            </a>
+        </div>
+
+        <div id="contactbtndiv">
+            <button id="closebtn" onclick="toggleAnimation()"></button>
+            <img id="close" src="img/icon.png" alt="">
+            <input type="checkbox" id="contactbtn" style="display: none;">
+
+            <img id="facebook" src="img/fb.png" alt="" onclick="openfacebook()">
+            <img id="instagram" src="img/ig.png" alt="" onclick="openinstagram()">
+            <img id="mail" src="img/mail.png" alt=""
+                onclick="window.location='mailto:your-b11035057@gemail.yuntech.edu.tw'">
+        </div>
+    </div>
+
+
+
+    <script>
+        function refreshPage() {
+            location.reload();
+        }
+
+        function toggleAnimation() {
+            var checkbox = document.getElementById("contactbtn");
+            checkbox.checked = !checkbox.checked;
+        }
+
+        function openfacebook() {
+            window.open('https://www.facebook.com/SAofDMD?mibextid=LQQJ4d', '_blank', 'noopener, noreferrer');
+        }
+
+        function openinstagram() {
+            window.open('https://instagram.com/yuntech_dmd_sa?igshid=MmIzYWVlNDQ5Yg==', '_blank', 'noopener, noreferrer');
+        }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
+        </script>
+</body>
+
+</html>

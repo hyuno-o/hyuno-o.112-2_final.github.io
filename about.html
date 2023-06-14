@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* cursor */
+        * {
+            cursor: url(img/cursor.png), auto;
+        }
+
+
+        body {
+            overflow-x: hidden;
+        }
+
+
+        /* section 1 */
+        #sec_01 {
+            background-color: #667f62;
+            width: 100vw;
+            z-index: 5;
+        }
+
+        #sec_01_title {
+            text-align: center;
+            color: aliceblue;
+            font-size: 60px;
+        }
+
+
+        #sec_01_img_01 {
+            width: 100%;
+            height: auto;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            margin-top: 10px;
+        }
+
+
+        /* section 2 */
+        #sec_02 {
+            background-color: #ffffff;
+            width: 100vw;
+            z-index: 5;
+        }
+
+        #sec_02_para_01 {
+            text-align: left;
+            align-items: center;
+        }
+
+
+        /* section 3 */
+        #sec_03 {
+            background-image: url(about_img/img_02.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            height: 100vh;
+            width: 100vw;
+            z-index: 5;
+        }
+
+        #sec_03_shpae_1 {
+            height: auto;
+            width: auto;
+            border-radius: 0px 0px 50px 50px;
+            position: absolute;
+            background-color: #667f62;
+            opacity: 85%;
+            filter: drop-shadow(0px 2px 2px rgb(38, 38, 38));
+            z-index: 1;
+            text-align: center;
+        }
+
+
+        /* section 4 */
+        #sec_04 {
+            background-color: #ffffff;
+            width: 100vw;
+            z-index: 5;
+        }
+
+        #sec_04_text {
+            width: 50%;
+            margin: 10px;
+        }
+
+        #sec_04_img {
+            width: 50%;
+            height: auto;
+        }
+
+
+        /* section 5 */
+        #sec_05 {
+            background-color: #667f62;
+            width: 100vw;
+            z-index: 5;
+        }
+
+        #sec_05_con {
+            height: 80%;
+        }
+
+        #sec_05_img {
+            z-index: 3;
+        }
+
+        #sec_05_rect {
+            background-color: #ffffff;
+            padding: 2%;
+            z-index: 1;
+        }
+
+
+        /* section 6 */
+        #sec_06 {
+            background-color: #3c3c3c;
+            width: 100vw;
+            z-index: 5;
+        }
+
+        #sec_06_rect {
+            background-color: #eeeeee;
+            width: 85%;
+        }
+
+
+        /* return btn */
+        #returnbtn {
+            width: 80px;
+            height: 41px;
+            position: fixed;
+            left: 15px;
+            bottom: 15px;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        #returnbtn:hover {
+            transform: scale(1.1);
+        }
+    </style>
+    <title>茶道 / 關於我們</title>
+    <link rel="icon" href="img/icon.png" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+</head>
+
+<body>
+    <!--section 1-->
+    <div id="sec_01">
+        <div style="height:25px ;"></div>
+
+        <div class="row">
+            <div class="col-4 m-0 p-0"></div>
+            <div class="col-4 m-0 p-0">
+                <p id="sec_01_title">關於我們</p>
+            </div>
+            <div class="col-4 m-0 p-0"></div>
+        </div>
+
+        <div class="row">
+            <div class="col-2 m-0 p-0"></div>
+            <div class="col-8 m-0 p-0">
+                <img id="sec_01_img_01" src="about_img/img_01.jpg" alt="">
+            </div>
+            <div class="col-2 m-0 p-0"></div>
+        </div>
+
+
+        <div style="height:100px ;"></div>
+    </div>
+
+
+    <!--section 2-->
+    <div id="sec_02">
+        <div style="height:100px ;"></div>
+
+        <div class="row">
+            <div class="col-3 m-0 p-0"></div>
+            <div id="sec_02_para_01" class="col-6 m-0 p-0">
+                <h2 class="mb-3"><b>茶道的起源和歷史</b></h2>
+                <p>
+                    茶道，又稱茶禮，是一種源於中國並在日本發展的獨特儀式。
+                    <br><br>
+                    茶道的起源可以追溯到數千年前的中國。茶葉最初被用作藥草，後來演變成一種飲品。
+                    <br>
+                    在唐朝時期，茶葉的風味和文化價值開始得到重視，並逐漸發展出茶道的基本原則和儀式。
+                    <br><br>
+                    在日本，茶道被視為一種精神和藝術的表達方式，具有禪宗的影響。
+                    <br>
+                    在茶道的發展中，宗德．千利休被認為是一位重要的茶道大師，他對茶道的藝術和哲學做出了深遠的貢獻。
+                    <br><br>
+                    &nbsp;/ 茶道不僅僅是一種飲茶的方式，更是一種生活的哲學和禮儀。 /&nbsp;
+                </p>
+            </div>
+            <div class="col-3 m-0 p-0"></div>
+        </div>
+
+        <div style="height:100px ;"></div>
+    </div>
+
+
+    <!--section 3-->
+    <div id="sec_03" class="d-flex justify-content-center align-items-center">
+        <div id="sec_03_shpae_1">
+            <div class="container mb-2 px-5" style="color: aliceblue;">
+                <br><br>
+                <h2 id="sec_03_title" class="mb-3" style="font-size: 45px;"><b>茶道的核心價值觀</b></h2>
+                <p>
+                    茶道的核心價值觀可以總結為四個字：<b>和敬清寂</b>
+                    <br><br>
+                    和敬清寂是指在茶道的實踐中追求和諧、尊重和平靜。
+                    <br>
+                    和敬強調對他人的尊重和善意，清寂則體現在茶道的環境和氛圍中。
+                    <br>
+                    茶道藉著簡單的禮節和精心的準備，讓人們能夠平靜下來，享受當下的瞬間。
+                    <br>
+                    茶道著重於內在的審美和精神的修養，並強調與自然的連接。
+                    <br>
+                    這些核心價值觀賦予了茶道一種獨特的魅力，也成為茶道在現代社會中受到追捧的原因之一。
+                </p>
+                <br><br>
+            </div>
+        </div>
+    </div>
+
+
+    <!--section 4-->
+    <div class="sec_04">
+        <div style="height:100px ;"></div>
+
+        <div class="container mt-5 mb-5 d-flex align-items-center">
+            <div id="sec_04_text">
+                <h2 class="m-3" style="font-size: 45px;"><b>茶道的儀式和流程</b></h2>
+                <p>
+                    茶道的儀式和流程被認為是茶道藝術的重要部分。
+                    <br>
+                    茶道的儀式包括準備茶具、泡茶、呈茶和品茶等過程。
+                    <br>
+                    在茶道的儀式中，每一個細節都被精心設計和執行。
+                    <br>
+                    茶具的選擇和擺放、水的溫度和品質、茶葉的量和選擇，以及呈茶和品茶的禮節，都體現了茶道藝術的精髓。
+                    <br>
+                    茶道的儀式追求簡樸和平靜，通過禮節和專注的實踐，讓人們能夠體驗到茶的真正價值。
+                </p>
+            </div>
+            <img id="sec_04_img" src="about_img/img_03.jpg" alt="">
+        </div>
+
+        <div style="height:100px ;"></div>
+    </div>
+
+
+    <!--section 5-->
+    <div id="sec_05">
+        <div id="sec_05_con" class="container p-5 d-flex">
+            <img id="sec_05_img" src="about_img/img_04.jpg" alt="">
+
+            <div id="sec_05_rect" class=" d-flex align-items-center">
+                <div class="container">
+                    <h2 class="m-3" style="font-size: 45px;"><b>茶道的文化影響</b></h2>
+                    <p>
+                        茶道對於東亞地區的文化影響深遠。
+                        <br>
+                        茶道不僅僅是一種飲茶的方式，更是一種生活態度和藝術表達。
+                        <br>
+                        茶道強調對自然的敬畏和與自然的和諧共處，這種觀念深深地影響了東亞人民的價值觀和生活方式。
+                        <br>
+                        茶道也成為一種文化的標誌，代表著東方的智慧和禮儀。
+                        <br>
+                        茶道藝術還在建築、書法、花道等藝術形式中得到體現。
+                        <br>
+                        茶道的文化影響超越了東亞地區，如今茶道也成為世界各地人們尋求平靜和內心寧靜的方式之一。
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!--section 6-->
+    <div id="sec_06">
+        <div class="conatiner pt-5 px-5 d-flex flex-row">
+            <div style="width: 8%;"></div>
+            <h1 style="color: aliceblue;"><b>組員</b></h1>
+        </div>
+
+        <div class="conatiner pb-3 px-5 d-flex flex-row">
+            <div style="width: 8%;"></div>
+            <p style="color: aliceblue;">我們只有兩個人，bla bla bla bla bla bla bla，<br>
+                請不要聯絡我們QQ</p>
+        </div>
+
+        <div class="conatiner px-5 d-flex justify-content-center">
+            <div id="sec_06_rect" class="d-flex row">
+                <div class="col-2"></div>
+                <div class="d-flex col-4 p-0 justify-content-center align-items-center">
+                    <img src="about_img/周暗暗.jpg" alt="" style="width: 75%; padding: 5%; padding-bottom: 1%;">
+                </div>
+                <div class="d-flex col-4 p-1 justify-content-center align-items-center">
+                    <img src="about_img/許器材.jpg" alt="" style="width: 75%; padding: 5%; padding-bottom: 1%;">
+                </div>
+                <div class="col-2"></div>
+            </div>
+        </div>
+        <div class="conatiner px-5 d-flex justify-content-center">
+            <div id="sec_06_rect" class="d-flex row">
+                <div class="col-2"></div>
+                <div class="d-flex col-4 p-0 m-0 justify-content-center">
+                    <h3 style="line-height: 20px;"><b>周暗暗</b></h3>
+                </div>
+                <div class="d-flex col-4 p-0 m-0 justify-content-center">
+                    <h3 style="line-height: 20px;"><b>許器材</b></h3>
+                </div>
+                <div class="col-2"></div>
+            </div>
+        </div>
+        <div class="conatiner px-5 pb-5 d-flex justify-content-center">
+            <div id="sec_06_rect" class="d-flex row">
+                <div class="col-2"></div>
+                <div class="d-flex col-4 p-0 m-0 justify-content-center">
+                    <p style="font-size: 22px;">B11035040</p>
+                </div>
+                <div class="d-flex col-4 p-0 m-0 justify-content-center">
+                    <p style="font-size: 22px;">B11035057</p>
+                </div>
+                <div class="col-2"></div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <a href="index.html">
+        <img id="returnbtn" src="img/return.png" alt="">
+    </a>
+
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
+        </script>
+</body>
+
+</html>
